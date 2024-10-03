@@ -5,6 +5,5 @@ pandas
 seaborn
 altair
 wordcloud
-mpl_toolkits
-io
+
 
