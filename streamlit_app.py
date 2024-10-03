@@ -41,3 +41,27 @@ st.dataframe(df.isna().sum())
 
 #Shows the generated descriptive statistics of the dataset
 st.dataframe(df.describe())
+
+#Shows general information about how we used the barchart
+st.title("Bar Chart")
+st.markdown("Used to accomplish the following: ")
+st.markdown("""
+1. Show the different amount of unique laptops per company
+2. Identify the company with the most amount of unique laptops
+3. Identify the company with the least amount of unique laptops
+""")
+
+#Creates the appropriate Bar Graph to show the different companies that are selling their respective number of unique laptop devices
+def barchart():
+  company_count = df['Company'].value_counts()
+  plt.bar(company_count.index, company_count.values)
+  plt.xticks(rotation=75)
+  plt.title("Companies and Their Number of Unique Laptop/s")
+  plt.xlabel("Company")
+  plt.ylabel("Number of Unique Laptops")
+  #syntax to show the chart on streamlit
+  st.pyplot(plt)
+  #This clears the elements of the previous graph, a must properly run graphs
+  plt.clf()
+
+barchart()
