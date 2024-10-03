@@ -28,18 +28,22 @@ st.markdown("""
 df = pd.read_csv("laptop_price - dataset.csv")
 
 #this shows the datasheet
+st.markdown("### Laptop_Price DataSheet")
 st.dataframe(df)
 
 #Shows information about the data set such as the column, datatype, and other relevant info.
+st.markdown("### Info About Datasheet")
 buffer = StringIO()
 df.info(buf=buffer)
 info_str = buffer.getvalue()  
 st.text(info_str)
 
 #Shows the null values present.
+st.markdown("### Present Null Values in the DataSheet")
 st.dataframe(df.isna().sum())
 
 #Shows the generated descriptive statistics of the dataset
+st.markdown("### DataSheet Descriptive Statistics")
 st.dataframe(df.describe())
 
 #Shows general information about how we used the barchart
