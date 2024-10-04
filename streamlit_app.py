@@ -224,11 +224,7 @@ def word_cloud():
   plt.title('Distribution of Unique Laptop Models Across Different RAM Sizes')
   plt.show()
 word_cloud()
-##############################################################
-
-
-
-
+######################################################
 #Conlusions Area
 st.markdown("## Conclusions:")
 st.write("Insights from our graphs: ")
