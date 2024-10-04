@@ -180,12 +180,59 @@ def heatmap():
   plt.clf()
   
 heatmap()
+
+#Shows general information about how we used the heatmap
+st.title("Historgram")
+st.markdown("Used to accomplish the following: ")
+st.markdown("""
+1. Show the distribution of Laptop Prices according to their frequency
+2. Identift the most common price point of laptops
+""")
+
+def histogram():
+  plt.hist(df['Price (Euro)'], bins=20, edgecolor='black')
+  plt.xlabel('Price (Euro)')
+  plt.ylabel('Frequency')
+  plt.title('Histogram of Laptop Prices')
+  st.pyplot(plt)
+  #This clears the elements of the previous graph, a must properly run graphs
+  plt.clf()
+
+histogram()
+
+#Shows general information about how we used the Line Graph
+st.title("Line Graph")
+st.markdown("Used to accomplish the following: ")
+st.markdown("""
+1.   Track the fluctuations in the price of laptop RAM
+2.   Show the trends in the pricepoints of ram according to the price and RAM
+""")
+def line_graph():
+  # Group data by year and calculate the average price
+  price_by_year = df.groupby('RAM (GB)')['Price (Euro)'].mean()
+
+  # Create a line graph
+  plt.plot(price_by_year.index, price_by_year.values)
+
+  # Set labels and title
+  plt.xlabel('RAM (GB)')
+  plt.ylabel('Average Price (Euro)')
+  plt.title('Average Laptop Price by RAM (GB)')
+  st.pyplot(plt)
+  #This clears the elements of the previous graph, a must properly run graphs
+  plt.clf()
+
+
+line_graph()
+
+
 st.title("Violin Plot")
 st.markdown("Used to accomplish the following: ")
 st.markdown("""
 1. Visualize the distribution of laptop prices across different brands
 2. Show the trends of price ranges among different laptop brands
 """)
+
 #violin plot for laptop brands and their prices
 def violin_plot():
   sns.set(style="darkgrid")
@@ -232,36 +279,8 @@ def word_cloud():
   
 word_cloud()
 
-# make line graph
-
-def line_graph():
-  # Group data by year and calculate the average price
-  price_by_year = df.groupby('RAM (GB)')['Price (Euro)'].mean()
-
-  # Create a line graph
-  plt.plot(price_by_year.index, price_by_year.values)
-
-  # Set labels and title
-  plt.xlabel('RAM (GB)')
-  plt.ylabel('Average Price (Euro)')
-  plt.title('Average Laptop Price by RAM (GB)')
-
-  # Display the graph
-  plt.show()
 
 
-line_graph()
-
-#  histogram
-
-def histogram():
-  plt.hist(df['Price (Euro)'], bins=20, edgecolor='black')
-  plt.xlabel('Price (Euro)')
-  plt.ylabel('Frequency')
-  plt.title('Histogram of Laptop Prices')
-  plt.show()
-
-histogram()
 
 #Conlusions Area
 st.markdown("## Conclusions:")
