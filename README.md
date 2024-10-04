@@ -3,7 +3,7 @@ This repository uses our previous [Project](https://colab.research.google.com/dr
 
 ## 🔗 Project Link
 This project is hosted via Streamlit:<br>
-https://appgroup2-ttsxvcir4k34w9bcts9jmd.streamlit.app/
+https://group2-visualization.streamlit.app/
 
 ## 📖 Project Overview
 This Streamlit web application is designed to showcase various data visualization techniques using a [dataset](https://www.kaggle.com/datasets/ironwolf404/laptop-price-dataset/data) that has been chosen for us, Additionally we have used the specified charts below to showcase the data:<br>
