@@ -91,6 +91,14 @@ def pie_chart():
 
 pie_chart()
 
+#Shows general information about how we used the densityplot
+st.title("Bar Chart")
+st.markdown("Used to accomplish the following: ")
+st.markdown("""
+1. Show the distribution of laptop prices
+2. Show the natural trend of laptop prices
+""")
+
 # Create a density plot for laptop prices
 def density_plot():
   sns.kdeplot(df['Price (Euro)'], fill=True)
@@ -104,6 +112,14 @@ def density_plot():
   plt.clf()
   
 density_plot()
+
+#Shows general information about how we used the heatmap
+st.title("Bar Chart")
+st.markdown("Used to accomplish the following: ")
+st.markdown("""
+1. To track the cpu frequency provided by each CPU company
+2. To track the the amount of CPUs that provides a certain frequency
+""")
 
 #heatmap for CPU company and the CPU frequency
 def heatmap():
