@@ -137,11 +137,45 @@ def heatmap():
   
 heatmap()
 
-  
+#Scatter Plot
+st.title("Scatter Plot: Laptop Price vs. Screen Size")
+st.markdown("Used to accomplish the following: ")
+st.markdown("""
+1. To define the relationship between screen size (in inches) and laptop price.
+2. To visualize the distribution of prices across different screen sizes.
+""")
 
+def scatter_plot():
+    plt.figure(figsize=(10, 6))
+    plt.scatter(df['Inches'], df['Price (Euro)'], color='b', alpha=0.5)
+    plt.title('Laptop Price vs. Screen Size (Inches)')
+    plt.xlabel('Screen Size (Inches)')
+    plt.ylabel('Price (Euro)')
+    plt.grid(True)
+    
+    st.pyplot(plt)
 
+scatter_plot()
 
+#Box plot
+st.title("Box Plot: Laptop Price Distribution by CPU Company")
+st.markdown("Used to accomplish the following:")
+st.markdown("""
+1. To compare laptop prices (in Euro) sold by different CPU companies
+""")
 
+def box_plot():
+    plt.figure(figsize=(10, 6))
+    sns.boxplot(x='CPU_Company', y='Price (Euro)', data=df)
+    plt.title('Laptop Price Distribution by CPU Company')
+    plt.xlabel('CPU Company')
+    plt.ylabel('Price (Euro)')
+    plt.xticks(rotation=45)
+    plt.grid(True)
+
+    st.pyplot(plt)  
+
+box_plot()
 
 
 
