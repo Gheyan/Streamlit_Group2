@@ -91,9 +91,37 @@ def pie_chart():
 
 pie_chart()
 
+# Create a density plot for laptop prices
+def density_plot():
+  sns.kdeplot(df['Price (Euro)'], fill=True)
+  plt.title('Trend of Laptop Prices')
+  plt.xlabel('Price (Euro)')
+  plt.ylabel('Density')
+  plt.show()
+  #syntax to show the chart on streamlit
+  st.pyplot(plt)
+  #This clears the elements of the previous graph, a must properly run graphs
+  plt.clf()
+  
+density_plot()
 
+#heatmap for CPU company and the CPU frequency
+def heatmap():
+  cpu_vs_type = pd.crosstab(df['CPU_Company'], df['CPU_Frequency (GHz)'])
+  plt.figure(figsize=(12, 8))
+  sns.heatmap(cpu_vs_type, annot=True, fmt='d', cmap='viridis')
+  plt.title('Heatmap of CPU Company and CPU Frequency')
+  plt.xlabel('CPU Frequency (GHz)')
+  plt.ylabel('CPU Company')
+  plt.show()
+  #syntax to show the chart on streamlit
+  st.pyplot(plt)
+  #This clears the elements of the previous graph, a must properly run graphs
+  plt.clf()
+  
+heatmap()
 
-
+  
 
 
 
