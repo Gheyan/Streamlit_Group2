@@ -199,6 +199,10 @@ def violin_plot():
   plt.ylabel('Laptop Brand')
   plt.title('Laptop Prices by Brand')
   plt.show()
+  #syntax to show the chart on streamlit
+  st.pyplot(plt)
+  #This clears the elements of the previous graph, a must properly run graphs
+  plt.clf()
 violin_plot()
 ##############################################################
 st.title("Word Cloud")
@@ -223,6 +227,10 @@ def word_cloud():
   plt.axis('off')
   plt.title('Distribution of Unique Laptop Models Across Different RAM Sizes')
   plt.show()
+  #syntax to show the chart on streamlit
+  st.pyplot(plt)
+  #This clears the elements of the previous graph, a must properly run graphs
+  plt.clf()
 word_cloud()
 ######################################################
 #Conlusions Area
