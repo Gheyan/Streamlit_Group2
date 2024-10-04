@@ -180,7 +180,51 @@ def heatmap():
   plt.clf()
   
 heatmap()
+##############################################################
+st.title("Violin Plot")
+st.markdown("Used to accomplish the following: ")
+st.markdown("""
+1. Visualize the distribution of laptop prices across different brands
+2. Show the trends of price ranges among different laptop brands
+""")
 
+#violin plot for laptop brands and their prices
+def violin_plot():
+  sns.set(style="darkgrid")
+  sns.set_context("notebook")
+  plt.gca().xaxis.set_major_locator(plt.MultipleLocator(1000))
+  sns.violinplot(data=df, x='Price (Euro)', y='Company', palette="rainbow", hue='Company')
+  plt.xlabel('Price (Euro)')
+  plt.xticks(rotation=45)
+  plt.ylabel('Laptop Brand')
+  plt.title('Laptop Prices by Brand')
+  plt.show()
+violin_plot()
+##############################################################
+st.title("Word Cloud")
+st.markdown("Used to accomplish the following: ")
+st.markdown("""
+1. Visualize the number of unique laptop models across different RAM sizes
+2. Show the number of laptop models of different RAM sizes
+""")
+
+#word cloud for RAM sizes
+def word_cloud():
+# width=800 - sets the width of the word cloud image to 800 pixels
+# height=400 - sets the height of the word cloud image to 400 pixels
+# background_color='white' - sets the background color of the word cloud to white
+# interpolation='bilinear' - uses bilinear interpolation to smooth the edges
+# of the words in the displayed image.
+# plt.axis('off') - hides the axis lines and labels from the plot
+  counts = df['RAM (GB)'].value_counts()
+  counts.index = counts.index.map(str)
+  wordcloud = WordCloud(width=800, height=800, background_color="black", colormap="Pastel1").generate_from_frequencies(counts)
+  plt.imshow(wordcloud, interpolation='bilinear')
+  plt.axis('off')
+  plt.title('Distribution of Unique Laptop Models Across Different RAM Sizes')
+  plt.show()
+word_cloud()
+##############################################################
 
 
 
