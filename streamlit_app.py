@@ -180,14 +180,12 @@ def heatmap():
   plt.clf()
   
 heatmap()
-##############################################################
 st.title("Violin Plot")
 st.markdown("Used to accomplish the following: ")
 st.markdown("""
 1. Visualize the distribution of laptop prices across different brands
 2. Show the trends of price ranges among different laptop brands
 """)
-
 #violin plot for laptop brands and their prices
 def violin_plot():
   sns.set(style="darkgrid")
@@ -203,15 +201,15 @@ def violin_plot():
   st.pyplot(plt)
   #This clears the elements of the previous graph, a must properly run graphs
   plt.clf()
+  
 violin_plot()
-##############################################################
+
 st.title("Word Cloud")
 st.markdown("Used to accomplish the following: ")
 st.markdown("""
 1. Visualize the number of unique laptop models across different RAM sizes
 2. Show the number of laptop models of different RAM sizes
 """)
-
 #word cloud for RAM sizes
 def word_cloud():
 # width=800 - sets the width of the word cloud image to 800 pixels
@@ -231,8 +229,9 @@ def word_cloud():
   st.pyplot(plt)
   #This clears the elements of the previous graph, a must properly run graphs
   plt.clf()
+  
 word_cloud()
-######################################################
+
 #Conlusions Area
 st.markdown("## Conclusions:")
 st.write("Insights from our graphs: ")
