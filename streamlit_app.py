@@ -232,6 +232,37 @@ def word_cloud():
   
 word_cloud()
 
+# make line graph
+
+def line_graph():
+  # Group data by year and calculate the average price
+  price_by_year = df.groupby('RAM (GB)')['Price (Euro)'].mean()
+
+  # Create a line graph
+  plt.plot(price_by_year.index, price_by_year.values)
+
+  # Set labels and title
+  plt.xlabel('RAM (GB)')
+  plt.ylabel('Average Price (Euro)')
+  plt.title('Average Laptop Price by RAM (GB)')
+
+  # Display the graph
+  plt.show()
+
+
+line_graph()
+
+#  histogram
+
+def histogram():
+  plt.hist(df['Price (Euro)'], bins=20, edgecolor='black')
+  plt.xlabel('Price (Euro)')
+  plt.ylabel('Frequency')
+  plt.title('Histogram of Laptop Prices')
+  plt.show()
+
+histogram()
+
 #Conlusions Area
 st.markdown("## Conclusions:")
 st.write("Insights from our graphs: ")
